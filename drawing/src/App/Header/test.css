@@ -1,0 +1,102 @@
+.header {
+  height: 79px;
+  width: 1440px;
+  background-color: #ffffff;
+}
+.text {
+  text-align: left;
+  vertical-align: top;
+  font-size: 48px;
+  font-family: Roboto;
+  line-height: 3.5rem;
+  color: #23036a;
+}
+.devider {
+  height: 79px;
+  width: 1440px;
+}
+.divider-child {
+  height: 1px;
+  width: 1440px;
+  background-color: #ffffff;
+}
+.divider {
+  height: 1px;
+  width: 1440px;
+  background-color: rgba(33, 33, 33, 0.07999999821186066);
+}
+.icon-left {
+  height: 37px;
+  width: 41px;
+  background-color: #ffffff;
+}
+.text {
+  text-align: left;
+  vertical-align: top;
+  font-size: 12px;
+  font-family: Roboto;
+  letter-spacing: 0.02500000037252903rem;
+  line-height: 1rem;
+  color: #969696;
+}
+.aicon {
+  height: 56px;
+  width: 45px;
+  background-color: #ffffff;
+}
+.icon-right {
+  height: 56px;
+  width: 41px;
+}
+.button-_-try {
+  height: 42px;
+  width: 100px;
+}
+.text {
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: Roboto;
+  letter-spacing: 0.078125rem;
+  line-height: 1rem;
+  color: #23036a;
+}
+.button-_-about {
+  height: 42px;
+  width: 100px;
+}
+.text {
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: Roboto;
+  letter-spacing: 0.078125rem;
+  line-height: 1rem;
+  color: #23036a;
+}
+.button-_-news {
+  height: 42px;
+  width: 100px;
+}
+.text {
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: Roboto;
+  letter-spacing: 0.078125rem;
+  line-height: 1rem;
+  color: #23036a;
+}
+.button-_-contact {
+  height: 42px;
+  width: 100px;
+}
+.text {
+  text-align: left;
+  vertical-align: top;
+  font-size: 14px;
+  font-family: Roboto;
+  letter-spacing: 0.078125rem;
+  line-height: 1rem;
+  color: #23036a;
+}
