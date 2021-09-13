@@ -179,7 +179,7 @@ export default function InputWindow() {
         console.log(refimgurl[0]);
         console.log(drawedimgurl[0]);
         if (refimgurl && drawedimgurl){
-            Axios.post('http://127.0.0.1:5000/input/calScore', {
+            Axios.post('https://mimicry-human-drawing.herokuapp.com/input/calScore', {
                 refimg: refimgurl[0], drawedimg: drawedimgurl[0],
             }).then(function (res) {
                 dispatch({ type: 'SET_ADVICE', image: res.data.resultimg });
