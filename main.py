@@ -22,7 +22,7 @@ def imread_base64(b64_bytes):
     return np.array(arr)
 
 
-@app.route('/')
+# @app.route('/')
 @app.route('/drawing')
 def index():
     return render_template("index.html")
