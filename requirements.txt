@@ -4,3 +4,4 @@ flask_cors
 imagehash
 pillow
 opencv-python==4.4.0.46
+opencv-python-headless==4.2.0.32
