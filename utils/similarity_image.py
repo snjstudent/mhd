@@ -97,7 +97,7 @@ def calc_similarity(img1, img2):
     assert hash1.shape[0] == hash1.shape[0]  # 同じハッシュサイズであること
     diff = np.count_nonzero(hash1 != hash2, axis=0)  # ハッシュ間の距離
     error_arr = np.zeros((imgshape_hash1.shape[0], imgshape_hash1.shape[1], 3))
-    error_arr[:, :, -1] = 255.0
+    error_arr[:, :, 0] = 255.0
     hash_err_arr = cv2.cvtColor(np.array((imgshape_hash1 != imgshape_hash2),
                                          dtype=np.uint8), cv2.COLOR_GRAY2RGB)
     error_arr *= hash_err_arr
