@@ -3,5 +3,6 @@ numpy==1.17.2
 flask_cors
 imagehash
 pillow
+base64
 opencv-python==4.4.0.46
 opencv-python-headless==4.2.0.32

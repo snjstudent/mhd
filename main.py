@@ -3,8 +3,6 @@ from flask import Flask, render_template
 from flask import request, make_response, jsonify
 from flask_cors import CORS
 import cv2
-import tempfile
-import requests
 import base64
 import numpy as np
 from utils.coutor_image import make_contour_image
