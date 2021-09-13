@@ -84,9 +84,9 @@ def img_hash(image):
     # (hash_size × hash_size, )のnumpy配列
     # ahash = imagehash.average_hash(
     #     image, hash_size).hash.flatten().astype('int8')
-    print(imagehash.phash(image, 32).hash.shape)
-    dhash = imagehash.phash(image, 32).hash.flatten().astype('int8')
-    return dhash, imagehash.phash(image, 32).hash
+    print(imagehash.phash(image, 8).hash.shape)
+    dhash = imagehash.phash(image, 8).hash.flatten().astype('int8')
+    return dhash, imagehash.phash(image, 8).hash
 
 
 def calc_similarity(img1, img2):
