@@ -11,7 +11,7 @@
 # production
 build/*
 
-drawing/sec/shared/*
+src/App/shared/*
 # misc
 .DS_Store
 .env.local
