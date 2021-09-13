@@ -92,7 +92,7 @@ def img_hash(image):
 def calc_similarity(img1, img2):
     img2 = image_registration(cv2.resize(
         img1, (200, 200)), cv2.resize(img2, (200, 200)))
-    hash1, imgshape_hash1 = img_hash(cv2.imread(img1))
+    hash1, imgshape_hash1 = img_hash(img1)
     hash2, imgshape_hash2 = img_hash(img2)
     assert hash1.shape[0] == hash1.shape[0]  # 同じハッシュサイズであること
     diff = np.count_nonzero(hash1 != hash2, axis=0)  # ハッシュ間の距離
