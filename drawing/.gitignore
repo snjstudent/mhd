@@ -9,9 +9,9 @@
 /coverage
 
 # production
-#  ./build/*
+build/*
 
-# drawing/sec/shared/*
+drawing/sec/shared/*
 # misc
 .DS_Store
 .env.local
