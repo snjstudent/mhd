@@ -84,30 +84,30 @@ def img_hash(image):
     # (hash_size × hash_size, )のnumpy配列
     # ahash = imagehash.average_hash(
     #     image, hash_size).hash.flatten().astype('int8')
-    print(imagehash.phash(image, 64).hash.shape)
-    dhash = imagehash.phash(image).hash.flatten().astype('int8')
-    return dhash, imagehash.phash(image, 64).hash
+    print(imagehash.phash(image, 32).hash.shape)
+    dhash = imagehash.phash(image, 32).hash.flatten().astype('int8')
+    return dhash, imagehash.phash(image, 32).hash
 
 
 def calc_similarity(img1, img2):
     img2 = image_registration(cv2.resize(
         img1, (200, 200)), cv2.resize(img2, (200, 200)))
-    hash1, imgshape_hash1 = img_hash(img1)
+    hash1, imgshape_hash1 = img_hash(cv2.imread(img1))
     hash2, imgshape_hash2 = img_hash(img2)
     assert hash1.shape[0] == hash1.shape[0]  # 同じハッシュサイズであること
     diff = np.count_nonzero(hash1 != hash2, axis=0)  # ハッシュ間の距離
-    error_arr = np.zeros((hash1.shape[0], hash1.shape[0], 3))
-    error_arr[:, :, 0] = 255.0
+    error_arr = np.zeros((imgshape_hash1.shape[0], imgshape_hash1.shape[1], 3))
+    error_arr[:, :, -1] = 255.0
     hash_err_arr = cv2.cvtColor(np.array((imgshape_hash1 != imgshape_hash2),
                                          dtype=np.uint8), cv2.COLOR_GRAY2RGB)
-    error_arr *= (1-hash_err_arr)
+    error_arr *= hash_err_arr
+    error_arr = cv2.resize(error_arr, (img2.shape[0], img2.shape[1]))
     blended_arr = cv2.addWeighted(
-        img2, 0.7, cv2.resize(
-            hash_err_arr, (img2.shape[0], img2.shape[1])), 0.3, 0)
+        img2, 0.7, error_arr, 0.3, 0, dtype=cv2.CV_32F)
     hash_len = hash1.shape[0]
     return (hash_len - diff) / hash_len, blended_arr
 
 
-if __name__ == '__main__':
-    cv2.imwrite('test.png', calc_similarity(
-        'output_ui.jpg', 'output_ui.jpg')[1])
+# if __name__ == '__main__':
+#     cv2.imwrite('test.png', calc_similarity(
+#         'output_ui.jpg', 'output_ui.jpg')[1])
